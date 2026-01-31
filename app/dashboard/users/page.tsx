@@ -13,7 +13,7 @@ interface User {
   locality: string
   city: string
   state: string
-  account_status: 'applied' | 'approved' | 'rejected' | 'banned'
+  account_status: 'pending' | 'approved' | 'rejected' | 'banned'
   account_mode: 'freemium' | 'premium'
   created_at: string
 }

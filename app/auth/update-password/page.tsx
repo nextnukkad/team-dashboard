@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { supabase } from '@/lib/supabase'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useToast } from '@/components/ToastProvider'
 
-export default function UpdatePasswordPage() {
+function UpdatePasswordForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { showToast } = useToast()
@@ -243,5 +243,17 @@ export default function UpdatePasswordPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function UpdatePasswordPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900 flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    }>
+      <UpdatePasswordForm />
+    </Suspense>
   )
 }
