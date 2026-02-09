@@ -172,7 +172,6 @@ export async function POST(request: Request) {
         title,
         body: notificationBody,
         data: data || {},
-        sent_by: teamMember.id,
         target_type: targetType,
         target_users: targetType === 'selected' ? targetUsers : [],
         total_recipients: uniqueTokens.length,
