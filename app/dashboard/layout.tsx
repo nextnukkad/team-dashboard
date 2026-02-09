@@ -5,11 +5,12 @@ import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { supabase } from '@/lib/supabase'
-import { LayoutDashboard, Users, CreditCard, AlertTriangle, FileText, Globe, LogOut, UserPlus, Settings } from 'lucide-react'
+import { LayoutDashboard, Users, CreditCard, AlertTriangle, FileText, Globe, LogOut, UserPlus, Settings, Bell } from 'lucide-react'
 
 const menuItems = [
   { icon: LayoutDashboard, label: 'Overview', href: '/dashboard' },
   { icon: Users, label: 'User Management', href: '/dashboard/users' },
+  { icon: Bell, label: 'Notifications', href: '/dashboard/notifications' },
   { icon: CreditCard, label: 'Transactions', href: '/dashboard/transactions' },
   { icon: AlertTriangle, label: 'Reports', href: '/dashboard/reports' },
   { icon: UserPlus, label: 'Early Access', href: '/dashboard/early-access' },
